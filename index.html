@@ -3,16 +3,153 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>엘소의 게임공방</title>
-<style>body{margin:0 auto;max-width:640px;padding:24px 16px;font:17px/1.6 system-ui,sans-serif}</style>
+<title>인더스트리아: 공장 퍼즐 · 엘소의 게임공방</title>
+<meta name="description" content="벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임. 500판, 하드 50판, 맵 메이커. 무료.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="인더스트리아: 공장 퍼즐">
+<meta property="og:description" content="벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 500판. 무료로 받기">
+<meta property="og:image" content="https://sjl20100524-crypto.github.io/img/og.jpg">
+<meta property="og:url" content="https://sjl20100524-crypto.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1e1a28;--paper:#fff6e3;--orange:#f5a23c;--orange-d:#c96f12;--gold:#ffc93c;--blue:#4f8df0;--soft:#6b5f55;--card:#fffdf7}
+*{box-sizing:border-box}
+body{margin:0;word-break:keep-all;overflow-wrap:anywhere;background:var(--orange);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+h1,h2,.btn,.tag{font-family:Jua,system-ui,sans-serif;font-weight:400}
+header{background:var(--paper);border-bottom:4px solid var(--ink)}
+.top{display:flex;align-items:center;gap:16px;padding:28px 0 24px}
+.top img{width:96px;height:96px;border-radius:22px;border:4px solid var(--ink);box-shadow:0 5px 0 var(--ink)}
+h1{margin:0;font-size:clamp(30px,6vw,46px);line-height:1.15}
+.sub{margin:4px 0 0;color:var(--soft)}
+.hero{padding:8px 0 30px}
+.hero p.lead{font-size:clamp(19px,3.4vw,24px);margin:0 0 18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-size:21px;color:var(--ink);text-decoration:none;border:4px solid var(--ink);border-radius:18px;box-shadow:0 5px 0 var(--ink);background:linear-gradient(#ffe38a,var(--gold) 55%,#f2b51c);transition:transform .08s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+.btn.alt{background:linear-gradient(#ffffff,#f1ebe0)}
+.btn small{font-family:system-ui,sans-serif;font-size:13px;color:var(--soft);display:block;line-height:1.1}
+.free{margin:12px 0 0;font-size:14px;color:var(--soft)}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:26px 16px 30px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots img{flex:0 0 auto;width:min(62vw,240px);border-radius:16px;border:4px solid var(--ink);box-shadow:0 6px 0 rgba(30,26,40,.55);scroll-snap-align:center;background:#fff}
+section.box{background:var(--card);border:4px solid var(--ink);border-radius:24px;box-shadow:0 6px 0 var(--ink);padding:22px 22px 18px;margin:0 0 22px}
+h2{margin:0 0 10px;font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:12px 14px}
+.card b{font-family:Jua,system-ui,sans-serif;font-weight:400;font-size:20px;display:block}
+.card span{color:var(--soft);font-size:15px}
+.nums{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+.tag{background:var(--ink);color:#fff;border-radius:999px;padding:4px 14px;font-size:18px}
+ul.plain{margin:6px 0 0;padding-left:20px}
+footer{padding:10px 0 40px;color:#3a2a14;font-size:14px}
+footer a{color:#3a2a14}
+.yt{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media (max-width:520px){.top img{width:72px;height:72px;border-radius:18px}.btn{width:100%;justify-content:center}}
+</style>
 </head>
 <body>
-<h1>엘소의 게임공방 · 인더스트리아</h1>
-<p>1인 개발자가 만드는 모바일 게임입니다.</p>
-<p>「인더스트리아」: 벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임</p>
-<ul>
-<li><a href="https://m.onestore.co.kr/v2/ko-kr/app/0001008835">원스토어에서 받기</a></li>
-<li><a href="https://sites.google.com/view/lsoju-industria">게임 소개 · 개인정보처리방침</a></li>
-</ul>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <img src="img/icon.png" alt="">
+      <div>
+        <h1>인더스트리아: 공장 퍼즐</h1>
+        <p class="sub" data-en="Industria: Factory Puzzle · by Elso's Game Workshop">엘소의 게임공방 · 1인 개발 모바일 게임</p>
+      </div>
+    </div>
+    <div class="hero">
+      <p class="lead" data-en="Lay belts, link machines, and get the factory running. A puzzle game with 500 levels.">벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임. 500판이 기다립니다.</p>
+      <div class="btns">
+        <a class="btn" href="gp.html?v=site" id="b_play">▶ <span><span data-en="Get it on Google Play">구글 플레이에서 받기</span><small data-en="Android · free">안드로이드 · 무료</small></span></a>
+        <a class="btn alt" href="go.html?v=site" id="b_one">▶ <span><span data-en="ONE store (Korea)">원스토어에서 받기</span><small data-en="Korean store">한국 스토어</small></span></a>
+      </div>
+      <p class="free" data-en="Free to play. Every level can be finished without paying. Solving levels works offline.">무료입니다. 결제 없이 모든 판을 끝까지 할 수 있고, 판을 푸는 데 인터넷이 필요 없습니다.</p>
+    </div>
+  </div>
+</header>
+
+<div class="shots" aria-label="스크린샷">
+  <img src="img/s01.jpg" alt="공장을 이은 판" loading="lazy">
+  <img src="img/s02.jpg" alt="첫 판 안내" loading="lazy">
+  <img src="img/s03.jpg" alt="별 셋" loading="lazy">
+  <img src="img/s04.jpg" alt="판 목록" loading="lazy">
+  <img src="img/s05.jpg" alt="자수정 판" loading="lazy">
+  <img src="img/s06.jpg" alt="얼음 바닥 판" loading="lazy">
+  <img src="img/s07.jpg" alt="순서 납품 판" loading="lazy">
+  <img src="img/s08.jpg" alt="하드 판" loading="lazy" id="s08">
+</div>
+
+<main class="wrap">
+  <section class="box">
+    <h2 data-en="How it plays">이런 게임입니다</h2>
+    <p data-en="Place miners, drag your finger to lay belts, and press start. Ore rides the belts, machines run, and goods pile up at the depot. The moment the layout you pictured actually runs — that's the game.">채굴기를 놓고, 손가락으로 끌어 벨트를 깔고, 시작을 누릅니다. 광석이 벨트를 타고 흐르고, 기계가 돌고, 납품구에 물건이 쌓이면 판이 끝납니다. 머릿속으로 그린 배치가 실제로 돌아가는 순간이 이 게임의 전부입니다.</p>
+    <div class="grid">
+      <div class="card"><b data-en="Tight spaces">좁은 자리</b><span data-en="Only four belts, but two rows of ore.">벨트는 네 개뿐인데 광맥은 두 줄입니다.</span></div>
+      <div class="card"><b data-en="Crossing lines">줄 엮기</b><span data-en="Three lines must cross. You have two bridges.">세 줄이 엇갈려야 하는데 다리는 둘뿐입니다.</span></div>
+      <div class="card"><b data-en="Splitting shares">몫 나누기</b><span data-en="Send 3, 1 and 2 to three depots from 12 ores.">광석 12개로 세 납품구에 3개 · 1개 · 2개씩.</span></div>
+      <div class="card"><b data-en="Sorting waste">버릴 것 고르기</b><span data-en="Send only steel forward and slag to the incinerator.">강철만 앞으로, 광재는 소각로로.</span></div>
+    </div>
+    <div class="nums">
+      <span class="tag" data-en="500 levels">500판</span>
+      <span class="tag" data-en="50 hard levels">하드 50판</span>
+      <span class="tag" data-en="3 stars per level">판마다 별 셋</span>
+      <span class="tag" data-en="Map maker">맵 메이커</span>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2 data-en="More to it">더 있는 것</h2>
+    <ul class="plain">
+      <li data-en="Stars for finishing, for speed, and for using fewer tiles — replay with a new layout to get them all.">별은 완료 · 시간 · 칸 수 세 가지. 다른 배치로 다시 풀어 남은 별을 받습니다.</li>
+      <li data-en="Part 2 opens after 300 levels: amethyst that breaks on corners, turntables, arrow floors, ice, ordered depots, pads and doors.">300판을 깨면 2부: 꺾이면 깨지는 자수정, 회전대, 화살표 바닥, 얼음, 순서 납품구, 발판과 문.</li>
+      <li data-en="Map maker: build your own level, clear it, and share it. Play maps others made in the shared map list.">맵 메이커: 판을 직접 만들고 깬 뒤 공유합니다. 다른 사람이 올린 맵도 골라 풉니다.</li>
+      <li data-en="Factory receipt: every cleared level gives a receipt with your time and tiles to decorate and send to friends.">완공 영수증: 판을 깨면 시간 · 칸 수가 적힌 영수증을 꾸며 친구에게 보낼 수 있습니다.</li>
+      <li data-en="New here? Practice levels point to each button and tile with a finger and speech bubble.">처음이어도 연습 판에서 손가락과 말풍선이 누를 곳을 가리킵니다.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2 data-en="Development videos">개발 영상</h2>
+    <p data-en="New machines and puzzles, shown first on YouTube.">새 기계와 퍼즐을 유튜브에서 먼저 보여 드립니다.</p>
+    <div class="yt">
+      <a class="btn alt" href="https://www.youtube.com/playlist?list=PLCnmHhtF7WA3QaVPkQJBf1Y6HUNn3ZPMd" rel="noopener"><span data-en="Industria playlist">「인더스트리아」 영상 모음</span></a>
+      <a class="btn alt" href="https://www.youtube.com/channel/UC-eznGb5FaNeKwLZxew_WSQ" rel="noopener"><span data-en="Elso's Game Workshop channel">엘소의 게임공방 채널</span></a>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2 data-en="Download">받기</h2>
+    <div class="btns">
+      <a class="btn" href="gp.html?v=site2">▶ <span data-en="Google Play">구글 플레이</span></a>
+      <a class="btn alt" href="go.html?v=site2">▶ <span data-en="ONE store">원스토어</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p data-en="Elso's Game Workshop · one-person indie developer">엘소의 게임공방 · 1인 개발자</p>
+  <p><a href="https://sites.google.com/view/lsoju-industria" data-en="Game info · Privacy policy">게임 소개 · 개인정보처리방침</a></p>
+</footer>
+
+<script>
+(function () {
+  var lang = (navigator.language || "ko").toLowerCase();
+  var q = new URLSearchParams(location.search).get("lang");
+  if (q) lang = q;
+  if (lang.indexOf("ko") !== 0) {
+    document.documentElement.lang = "en";
+    document.title = "Industria: Factory Puzzle";
+    document.querySelectorAll("[data-en]").forEach(function (e) { e.textContent = e.getAttribute("data-en"); });
+    var s8 = document.getElementById("s08");
+    if (s8) s8.src = "img/s08en.jpg";
+    var one = document.getElementById("b_one");
+    if (one) one.style.display = "none";      // 원스토어는 한국 전용
+    document.querySelector("h1").textContent = "Industria: Factory Puzzle";
+  }
+})();
+</script>
 </body>
 </html>

@@ -137,7 +137,15 @@ footer a{color:#3a2a14}
 <script>
 (function () {
   var lang = (navigator.language || "ko").toLowerCase();
-  var q = new URLSearchParams(location.search).get("lang");
+  var ps = new URLSearchParams(location.search);
+  var q = ps.get("lang");
+  // ?v=<영상id> 로 들어오면 받기 단추가 그 이름으로 현황판 「유입」 에 잡힌다 (유튜브 설명란 · 고정 댓글 링크)
+  var v = ps.get("v") || "";
+  if (/^[A-Za-z0-9_-]{1,20}$/.test(v)) {
+    document.querySelectorAll('a[href^="gp.html?v="],a[href^="go.html?v="]').forEach(function (a) {
+      a.setAttribute("href", a.getAttribute("href").replace(/v=[^&]*/, "v=" + v));
+    });
+  }
   if (q) lang = q;
   if (lang.indexOf("ko") !== 0) {
     document.documentElement.lang = "en";

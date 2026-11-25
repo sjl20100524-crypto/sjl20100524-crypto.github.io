@@ -115,8 +115,8 @@ footer a{color:#3a2a14}
     <h2 data-en="Development videos">개발 영상</h2>
     <p data-en="New machines and puzzles, shown first on YouTube.">새 기계와 퍼즐을 유튜브에서 먼저 보여 드립니다.</p>
     <div class="yt">
-      <a class="btn alt" href="https://www.youtube.com/playlist?list=PLCnmHhtF7WA3QaVPkQJBf1Y6HUNn3ZPMd" rel="noopener"><span data-en="Industria playlist">「인더스트리아」 영상 모음</span></a>
-      <a class="btn alt" href="https://www.youtube.com/channel/UC-eznGb5FaNeKwLZxew_WSQ" rel="noopener"><span data-en="Elso's Game Workshop channel">엘소의 게임공방 채널</span></a>
+      <a class="btn alt" id="yt_shorts" href="https://www.youtube.com/channel/UC-eznGb5FaNeKwLZxew_WSQ/shorts" rel="noopener"><span data-en="Industria shorts">「인더스트리아」 쇼츠 모음</span></a>
+      <a class="btn alt" id="yt_ch" href="https://www.youtube.com/channel/UC-eznGb5FaNeKwLZxew_WSQ" rel="noopener"><span data-en="Industria channel">엘소의 게임공방 채널</span></a>
     </div>
   </section>
 
@@ -155,6 +155,10 @@ footer a{color:#3a2a14}
     if (s8) s8.src = "img/s08en.jpg";
     var one = document.getElementById("b_one");
     if (one) one.style.display = "none";      // 원스토어는 한국 전용
+    // 영어 화면은 영어 채널 Industria (@IndustriaPuzzle) 로 (2026-11-25)
+    var ys = document.getElementById("yt_shorts"), yc = document.getElementById("yt_ch");
+    if (ys) ys.href = "https://www.youtube.com/@IndustriaPuzzle/shorts";
+    if (yc) yc.href = "https://www.youtube.com/@IndustriaPuzzle";
     document.querySelector("h1").textContent = "Industria: Factory Puzzle";
   }
 })();

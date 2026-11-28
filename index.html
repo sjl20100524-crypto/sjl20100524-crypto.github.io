@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>인더스트리아: 공장 퍼즐 · 엘소의 게임공방</title>
-<meta name="description" content="벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임. 500판, 하드 50판, 맵 메이커. 무료.">
+<meta name="description" content="벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임. 530판, 하드 50판, 맵 메이커. 무료.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="인더스트리아: 공장 퍼즐">
-<meta property="og:description" content="벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 500판. 무료로 받기">
+<meta property="og:description" content="벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 530판. 무료로 받기">
 <meta property="og:image" content="https://sjl20100524-crypto.github.io/img/og.jpg">
 <meta property="og:url" content="https://sjl20100524-crypto.github.io/">
 <meta name="twitter:card" content="summary_large_image">
@@ -61,7 +61,7 @@ footer a{color:#3a2a14}
       </div>
     </div>
     <div class="hero">
-      <p class="lead" data-en="Lay belts, link machines, and get the factory running. A puzzle game with 500 levels.">벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임. 500판이 기다립니다.</p>
+      <p class="lead" data-en="Lay belts, link machines, and get the factory running. A puzzle game with 530 levels.">벨트를 깔고 기계를 이어 공장을 돌리는 퍼즐 게임. 530판이 기다립니다.</p>
       <div class="btns">
         <a class="btn" href="gp.html?v=site" id="b_play">▶ <span><span data-en="Get it on Google Play">구글 플레이에서 받기</span><small data-en="Android · free">안드로이드 · 무료</small></span></a>
         <a class="btn alt" href="go.html?v=site" id="b_one">▶ <span><span data-en="ONE store (Korea)">원스토어에서 받기</span><small data-en="Korean store">한국 스토어</small></span></a>
@@ -71,15 +71,15 @@ footer a{color:#3a2a14}
   </div>
 </header>
 
-<div class="shots" aria-label="스크린샷">
-  <img src="img/s01.jpg" alt="공장을 이은 판" loading="lazy">
-  <img src="img/s02.jpg" alt="첫 판 안내" loading="lazy">
-  <img src="img/s03.jpg" alt="별 셋" loading="lazy">
-  <img src="img/s04.jpg" alt="판 목록" loading="lazy">
-  <img src="img/s05.jpg" alt="자수정 판" loading="lazy">
-  <img src="img/s06.jpg" alt="얼음 바닥 판" loading="lazy">
-  <img src="img/s07.jpg" alt="순서 납품 판" loading="lazy">
-  <img src="img/s08.jpg" alt="하드 판" loading="lazy" id="s08">
+<div class="shots" aria-label="스크린샷" data-en-label="Screenshots">
+  <img src="img/s01.jpg" alt="공장을 이은 판" data-en-src="img/s01en.jpg" data-en-alt="A running factory level" loading="lazy">
+  <img src="img/s02.jpg" alt="첫 판 안내" data-en-src="img/s02en.jpg" data-en-alt="First level guide" loading="lazy">
+  <img src="img/s03.jpg" alt="별 셋" data-en-src="img/s03en.jpg" data-en-alt="Level complete with 3 stars" loading="lazy">
+  <img src="img/s04.jpg" alt="판 목록" data-en-src="img/s04en.jpg" data-en-alt="Level list" loading="lazy">
+  <img src="img/s05.jpg" alt="자수정 판" data-en-src="img/s05en.jpg" data-en-alt="Amethyst level" loading="lazy">
+  <img src="img/s06.jpg" alt="얼음 바닥 판" data-en-src="img/s06en.jpg" data-en-alt="Ice floor level" loading="lazy">
+  <img src="img/s07.jpg" alt="순서 납품 판" data-en-src="img/s07en.jpg" data-en-alt="In-order hub level" loading="lazy">
+  <img src="img/s08.jpg" alt="하드 판" data-en-src="img/s08en.jpg" data-en-alt="Hard levels" loading="lazy" id="s08">
 </div>
 
 <main class="wrap">
@@ -93,7 +93,7 @@ footer a{color:#3a2a14}
       <div class="card"><b data-en="Sorting waste">버릴 것 고르기</b><span data-en="Send only steel forward and slag to the incinerator.">강철만 앞으로, 광재는 소각로로.</span></div>
     </div>
     <div class="nums">
-      <span class="tag" data-en="500 levels">500판</span>
+      <span class="tag" data-en="530 levels">530판</span>
       <span class="tag" data-en="50 hard levels">하드 50판</span>
       <span class="tag" data-en="3 stars per level">판마다 별 셋</span>
       <span class="tag" data-en="Map maker">맵 메이커</span>
@@ -151,8 +151,12 @@ footer a{color:#3a2a14}
     document.documentElement.lang = "en";
     document.title = "Industria: Factory Puzzle";
     document.querySelectorAll("[data-en]").forEach(function (e) { e.textContent = e.getAttribute("data-en"); });
-    var s8 = document.getElementById("s08");
-    if (s8) s8.src = "img/s08en.jpg";
+    // 스크린샷 8장 모두 영어판으로 · 대체 글도 영어로 (2026-11-28)
+    document.querySelectorAll("img[data-en-src]").forEach(function (im) {
+      im.src = im.getAttribute("data-en-src");
+      im.alt = im.getAttribute("data-en-alt") || "";
+    });
+    document.querySelectorAll("[data-en-label]").forEach(function (e) { e.setAttribute("aria-label", e.getAttribute("data-en-label")); });
     var one = document.getElementById("b_one");
     if (one) one.style.display = "none";      // 원스토어는 한국 전용
     // 영어 화면은 영어 채널 Industria (@IndustriaPuzzle) 로 (2026-11-25)
